@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <#assign key = primaryKey[0] />
+<#assign keyField = primaryKeyFields[0] />
 <#assign head = "#{" />
 <mapper namespace="${packagePath}.dao">
 
@@ -60,7 +61,7 @@
 			${field.tableFieldName}=${head}${field.fieldName}}<#if (field_index != (fields?size-1))>, </#if>
 		</#list>	
 		</set>
-		where ${key}=${head}${key}} <#if (drdsId ??)><include refid="drdsId" /></#if>
+		where ${key}=${head}${keyField}} <#if (drdsId ??)><include refid="drdsId" /></#if>
 	</update>
 
 	<update id="updateIgnoreNull${alias?cap_first}">
@@ -76,7 +77,7 @@
 		</if>
 		</#list>
 		</set>
-		where ${key}=${head}${key}} <#if (drdsId ??)><include refid="drdsId" /></#if>
+		where ${key}=${head}${keyField}} <#if (drdsId ??)><include refid="drdsId" /></#if>
 	</update>
 
 	<update id="updateByExample${alias?cap_first}">
@@ -100,7 +101,7 @@
 		select 
 		<include refid="columns_as"/>
 		from ${tableName}
-		where ${key}=${head}${key}} <#if (drdsId ??)><include refid="drdsId" /></#if>
+		where ${key}=${head}${keyField}} <#if (drdsId ??)><include refid="drdsId" /></#if>
 	</select>
 	
 	<select id="select${alias?cap_first}" resultType="${packagePath}.entity.${alias?cap_first}Vo">
