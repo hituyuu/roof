@@ -19,13 +19,13 @@ public class AutoXfhCreateUtilsMysqlTest extends
 	public void testCreateCode() {
 
 		// 包名
-		String packagePath = "com.roof.fpa.counselor";
+		String packagePath = "com.roof.advisory.applicationuser";
 
 		// 添加需要生成的表名
 		List<String> sourcelist = new ArrayList<String>();
-		sourcelist.add("c_counselor");
+		sourcelist.add("z_application_user");
 
-		autoXfhCreateUtils.setProject_name("fpa");
+		autoXfhCreateUtils.setProject_name("advisory");
 		// 拆分键
 		autoXfhCreateUtils.createCode(packagePath, sourcelist, "", false); // 不带拆分键，不带页签
 		// autoLetvCreateUtils.createCode(packagePath, sourcelist, "", true); //
