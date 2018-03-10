@@ -1,4 +1,4 @@
-package com.netease.urs.sms.utils;
+package org.roof.httpclinet;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
