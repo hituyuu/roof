@@ -20,7 +20,12 @@
 		${tableName}
 		where 1=1
 		<include refid="conds" />
-		order by id desc
+		<#list fields as field>
+			<#if field.tableFieldName == "state">
+		and state = '1'
+			</#if>
+		</#list>
+		order by ${key} desc
 		limit ${head}firstrownum}, ${head}limit}) t2
 		where t1.${key} = t2.${key}
 	</select>
@@ -31,5 +36,10 @@
 		from ${tableName}
 		where 1=1
 		<include refid="conds" />
+		<#list fields as field>
+			<#if field.tableFieldName == "state">
+		and state = '1'
+			</#if>
+		</#list>
 	</select>
 </mapper>
