@@ -1,4 +1,4 @@
-package org.roof.signature.client;
+package org.roof.signature.sdk;
 
 import java.util.Map;
 
@@ -10,7 +10,8 @@ import java.util.Map;
  */
 public interface SignatureCreator {
     /**
-     * 生成签名
+     * 生成签名<br/>
+     * 签名失败返回空
      *
      * @param accessKey     密钥
      * @param signature     签名系统参数
@@ -19,4 +20,15 @@ public interface SignatureCreator {
      * @return 签名
      */
     String create(AccessKey accessKey, Signature signature, String requestMethod, Map<String, String> params);
+
+    /**
+     * 生成签名<br/>
+     * 签名失败返回空
+     *
+     * @param accessKey     密钥
+     * @param requestMethod 请求方法(POST, GET)
+     * @param params        参数列表
+     * @return 签名
+     */
+    String create(AccessKey accessKey, String requestMethod, Map<String, String> params);
 }

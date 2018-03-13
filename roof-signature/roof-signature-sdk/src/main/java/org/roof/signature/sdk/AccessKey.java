@@ -1,4 +1,4 @@
-package org.roof.signature.client;
+package org.roof.signature.sdk;
 
 /**
  * 请求密钥
@@ -9,6 +9,14 @@ package org.roof.signature.client;
 public class AccessKey {
     private String accessKeyId;
     private String accessKeySecret;
+
+    public AccessKey() {
+    }
+
+    public AccessKey(String accessKeyId, String accessKeySecret) {
+        this.accessKeyId = accessKeyId;
+        this.accessKeySecret = accessKeySecret;
+    }
 
     public String getAccessKeyId() {
         return accessKeyId;
@@ -24,5 +32,13 @@ public class AccessKey {
 
     public void setAccessKeySecret(String accessKeySecret) {
         this.accessKeySecret = accessKeySecret;
+    }
+
+    @Override
+    public String toString() {
+        return "AccessKey{" +
+                "accessKeyId='" + accessKeyId + '\'' +
+                ", accessKeySecret='" + accessKeySecret + '\'' +
+                '}';
     }
 }
