@@ -15,7 +15,7 @@
      http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
 	 http://www.springframework.org/schema/util 
 	 http://www.springframework.org/schema/util/spring-util-3.0.xsd">
-
+	<import resource="classpath:spring-db.xml" />
 	<!-- 启用注解 -->
 	<context:annotation-config />
 	<!-- AOP配置 -->
@@ -30,5 +30,4 @@
 			</list>
 		</property>
 	</bean>
-	<import resource="classpath:spring-db.xml" />
 </beans>

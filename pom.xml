@@ -16,6 +16,7 @@
         <module>roof-creator</module>
         <module>roof-file</module>
         <module>roof-httpclient</module>
+        <module>roof-signature</module>
     </modules>
 
     <properties>
